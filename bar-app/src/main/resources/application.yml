@@ -1,0 +1,10 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${random.int}
+  client:
+    enabled: true
+    registerWithEureka: true
+
+ribbon:
+  eureka:
+    enabled: true
