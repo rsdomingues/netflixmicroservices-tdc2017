@@ -20,7 +20,6 @@ class TDCSimulation1 extends Simulation {
 	val scn = scenario("Todas as funcionalidades")
 		.exec(http("Foo Bar Request")
 				.get("/foo/call")
-				.check(substring("Fallback").notExists)
 				.check(status.is(200)))
         .exec(http("Foo Request")
 				.get("/foo/info")

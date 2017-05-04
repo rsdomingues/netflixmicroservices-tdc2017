@@ -5,7 +5,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
 
-class TDCSimulation2 extends Simulation {
+class TDCSimulation3 extends Simulation {
 
 	val httpProtocol = http
 		.baseURL("http://localhost:8765")
@@ -30,11 +30,11 @@ class TDCSimulation2 extends Simulation {
             
 	setUp(
 		scn.inject(
-    		atOnceUsers(10),
-    		constantUsersPerSec(40) during(30 seconds),
-    		constantUsersPerSec(70) during(30 seconds),
+    		atOnceUsers(50),
     		constantUsersPerSec(100) during(30 seconds),
-    		constantUsersPerSec(130) during(30 seconds)
+    		constantUsersPerSec(160) during(30 seconds),
+    		constantUsersPerSec(230) during(30 seconds),
+    		constantUsersPerSec(320) during(30 seconds)
     	).protocols(httpProtocol)
     )
 }

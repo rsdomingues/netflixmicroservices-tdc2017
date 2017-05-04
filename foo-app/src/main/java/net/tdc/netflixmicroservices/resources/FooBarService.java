@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import net.tdc.netflixmicroservices.remote.BarClient;
 
-@RestController("/remote")
+@RestController
 public class FooBarService {
-
 
     private BarClient barClient;
 

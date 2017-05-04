@@ -13,9 +13,9 @@ public class BarService {
         return "You called the Bar App";
     }
 
-    @RequestMapping(value = "/name", produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
-    public String name() {
-        return "{\"name\":\"Bar\"}";
+    @RequestMapping(value = "/detail", produces = MimeTypeUtils.APPLICATION_JSON_VALUE)
+    public Detail name() {
+        return new Detail("Bar");
     }
 
 }

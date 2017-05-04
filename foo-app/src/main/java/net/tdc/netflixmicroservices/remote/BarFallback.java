@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class BarFallback implements BarClient{
 
     @Override
-    public Info getInfo() {
-        return new Info("Bar[Fallback]");
+    public Detail getInfo() {
+        return new Detail("Bar[Fallback]");
     }
 }
