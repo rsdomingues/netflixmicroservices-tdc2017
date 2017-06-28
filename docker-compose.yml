@@ -1,0 +1,48 @@
+version: '2'
+services:
+  #Plataform Services
+  eureka:
+    image: plataform/eureka:1.1
+    ports:
+      - "8761:8761"
+    networks:
+      - interline
+
+  zuul:
+    image: plataform/zuul:1.0
+    ports:
+      - "80:80"
+    networks:
+      - interline
+    depends_on: 
+        - eureka
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka/
+
+  #interline applications
+  bar:
+    image: interline/bar-app:1.1
+    networks:
+      - interline
+    depends_on: 
+      - eureka
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka/
+      - server.port=0
+
+  foo:
+    image: interline/foo-app:1.0
+    networks:
+      - interline
+    depends_on: 
+        - eureka
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://eureka:8761/eureka/
+      - server.port=0
+
+#Network
+networks:
+    interline:
+        ipam:
+            config:
+                - subnet: 10.2.2.0/24
