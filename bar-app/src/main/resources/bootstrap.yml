@@ -2,7 +2,7 @@
 # Spring Cloud Config bootstrap configuration for the "Bar" app
 # ===================================================================
 server:
-    port: 0
+    port: 8080
 
 spring:
     application:

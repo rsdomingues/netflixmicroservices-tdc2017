@@ -16,7 +16,7 @@ zuul:
     zuulserver: /self/**
 
 server:
-  port: 8765
+  port: 80
 
 logging:
   level:
