@@ -5,6 +5,11 @@ eureka:
     enabled: true
     registerWithEureka: true
 
-ribbon:
-  eureka:
-    enabled: true
+security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false
+

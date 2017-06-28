@@ -8,3 +8,11 @@ eureka:
 ribbon:
   eureka:
     enabled: true
+
+security:
+  basic:
+    enabled: false
+
+management:
+  security:
+    enabled: false

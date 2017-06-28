@@ -6,7 +6,7 @@ server:
 
 spring:
     application:
-        name: foo
+        name: foo-app
     cloud:
         config:
             #to enable just turn this to true

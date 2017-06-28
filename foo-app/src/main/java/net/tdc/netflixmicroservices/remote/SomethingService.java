@@ -6,7 +6,7 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 public class SomethingService {
 
 
-@HystrixCommand(defaultFallback = "doSomethingThatCantFail")
+@HystrixCommand(fallbackMethod = "doSomethingThatCantFail")
 public String doShomethingThatCanFail(){
     throw new RuntimeException("Error");
 }

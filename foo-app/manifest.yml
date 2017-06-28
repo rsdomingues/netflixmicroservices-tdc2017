@@ -1,0 +1,10 @@
+---
+applications:
+- name: foo-app
+  memory: 768M
+  instances: 1
+  random-route: true
+  path: ./target/foo-app-0.0.1.jar
+  services:
+   - eureka
+   - turbine
