@@ -3,5 +3,5 @@ VOLUME /tmp
 ADD target/eureka-0.0.1-SNAPSHOT.jar /app.jar
 RUN sh -c 'touch /app.jar'
 EXPOSE 8761
-ENV JAVA_OPTS="-Xms128m -Xmx128m"
+ENV JAVA_OPTS="-Xms64m -Xmx64m"
 ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
