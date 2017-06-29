@@ -17,7 +17,7 @@ services:
     depends_on: 
         - eureka
     environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+      - eureka_client_serviceUrl_defaultZone=http://eureka:8761/eureka/
 
   #interline applications
   bar:
@@ -27,7 +27,7 @@ services:
     depends_on: 
       - eureka
     environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+      - eureka_client_serviceUrl_defaultZone=http://eureka:8761/eureka/
       - SERVER_PORT=0
 
   foo:
@@ -37,7 +37,7 @@ services:
     depends_on: 
         - eureka
     environment:
-      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eureka:8761/eureka/
+      - eureka_client_serviceUrl_defaultZone=http://eureka:8761/eureka/
       - SERVER_PORT=0
 
 #Network
